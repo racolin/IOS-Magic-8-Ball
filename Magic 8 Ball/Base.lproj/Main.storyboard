@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask me anything..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALl-l0-kII">
+                                <rect key="frame" x="33.666666666666657" y="259" width="326" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="326" id="N1c-Wb-aIe"/>
+                                    <constraint firstAttribute="height" constant="51" id="RMN-qp-big"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiE-Dv-y7k">
+                                <rect key="frame" x="170" y="767" width="53" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="6ww-50-hJm"/>
+                                    <constraint firstAttribute="height" constant="35" id="Ke1-wR-UCV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Ask"/>
+                                <connections>
+                                    <action selector="onAskPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HcD-K6-EHH"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogJ-6T-jNe">
+                                <rect key="frame" x="46.666666666666657" y="326" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="4rY-v9-G81"/>
+                                    <constraint firstAttribute="width" constant="300" id="AYY-mj-g4m"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="ALl-l0-kII" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3c6-WJ-z8b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OiE-Dv-y7k" secondAttribute="bottom" constant="16" id="CR0-jJ-Eag"/>
+                            <constraint firstItem="ogJ-6T-jNe" firstAttribute="top" secondItem="ALl-l0-kII" secondAttribute="bottom" constant="16" id="TLk-Qk-jOe"/>
+                            <constraint firstItem="OiE-Dv-y7k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bzr-gi-SEk"/>
+                            <constraint firstItem="ogJ-6T-jNe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n7q-Ov-Hrq"/>
+                            <constraint firstItem="ogJ-6T-jNe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="shv-Vh-W9h"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ogJ-6T-jNe" id="pat-hA-Tnb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
